@@ -16,6 +16,9 @@ int main(int argc, char** argv) {
   geometry_msgs::Quaternion orientation;
   orientation.w = 1.0;
   SendGoal(client, MakeGoal(position, orientation));
+
+  ros::Duration(5.0).sleep();
+
   position.x = -2.5;
   position.y = 3.5;
   orientation.z = 0.7;
