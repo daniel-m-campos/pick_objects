@@ -9,7 +9,9 @@ namespace pick_objects {
 typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction>
     MoveBaseClient;
 
-move_base_msgs::MoveBaseGoal MakeGoal();
+move_base_msgs::MoveBaseGoal MakeGoal(
+    const geometry_msgs::Point& position,
+    const geometry_msgs::Quaternion& orientation);
 
 void SendGoal(MoveBaseClient& client, const move_base_msgs::MoveBaseGoal& goal);
 
