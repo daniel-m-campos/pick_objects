@@ -125,6 +125,8 @@ add_library(${PROJECT_NAME}
         src/${PROJECT_NAME}.cpp
         )
 
+target_link_libraries(${PROJECT_NAME} PUBLIC ${catkin_LIBRARIES})
+
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
@@ -147,7 +149,7 @@ add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catk
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(${PROJECT_NAME}_node
-        ${catkin_LIBRARIES}
+        ${PROJECT_NAME}
         )
 
 #############
